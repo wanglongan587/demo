@@ -1,0 +1,348 @@
+[
+  {
+    "collection": "projects",
+    "id": "p1",
+    "data": {
+      "name": "ora-desktop",
+      "description": "本地 AI 开发工作台",
+      "env": "local"
+    }
+  },
+  {
+    "collection": "projects",
+    "id": "p2",
+    "data": {
+      "name": "ora-cloud",
+      "description": "云端 Agent 协作空间",
+      "env": "cloud"
+    }
+  },
+  {
+    "collection": "tasks",
+    "id": "t1",
+    "data": {
+      "title": "统一工作空间的侧边栏与导航",
+      "env": "local",
+      "status": "running",
+      "agent": "Codex",
+      "description": "将桌面端与云端的导航结构统一，保持任务上下文和项目切换体验一致。",
+      "messages": [],
+      "projectId": "p1"
+    }
+  },
+  {
+    "collection": "tasks",
+    "id": "t2",
+    "data": {
+      "title": "Dashboard 统计计算与边界测试",
+      "env": "cloud",
+      "status": "review",
+      "agent": "OpenCode",
+      "description": "检查 Dashboard 的统计逻辑，整理边界条件与测试方案。",
+      "messages": [],
+      "projectId": "p2"
+    }
+  },
+  {
+    "collection": "tasks",
+    "id": "t3",
+    "data": {
+      "title": "为工作流增加条件分支节点",
+      "env": "local",
+      "status": "todo",
+      "agent": "Claude Code",
+      "description": "设计工作流的条件判断与多分支交互。",
+      "messages": [],
+      "projectId": "p1"
+    }
+  },
+  {
+    "collection": "tasks",
+    "id": "t4",
+    "data": {
+      "title": "梳理项目结构，生成开发指南",
+      "env": "cloud",
+      "status": "done",
+      "agent": "Codex",
+      "description": "梳理项目目录和模块职责，生成新成员开发指南。",
+      "messages": [],
+      "projectId": "p2"
+    }
+  },
+  {
+    "collection": "tasks",
+    "id": "t5",
+    "data": {
+      "title": "优化 Agent 会话的错误恢复体验",
+      "env": "cloud",
+      "status": "done",
+      "agent": "OpenCode",
+      "description": "为会话失败提供清晰提示和可恢复的操作入口。",
+      "messages": [],
+      "projectId": "p2"
+    }
+  },
+  {
+    "collection": "schedules",
+    "id": "s1",
+    "data": {
+      "title": "每日代码质量巡检",
+      "prompt": "检查近期变更并整理代码审查建议",
+      "time": "09:00",
+      "frequency": "工作日",
+      "env": "local",
+      "enabled": true
+    }
+  },
+  {
+    "collection": "schedules",
+    "id": "s2",
+    "data": {
+      "title": "生成项目进展周报",
+      "prompt": "汇总本周的任务进度和阻塞项",
+      "time": "18:00",
+      "frequency": "每周五",
+      "env": "cloud",
+      "enabled": false
+    }
+  },
+  {
+    "collection": "workflows",
+    "id": "w1",
+    "data": {
+      "name": "代码审查与质量检查",
+      "description": "让 Agent 读懂变更，输出可执行的审查建议。",
+      "role": "你是一名代码审查助手，请分析输入内容，整理潜在问题与改进建议。",
+      "agent": "Codex",
+      "extra": false
+    }
+  },
+  {
+    "collection": "workflows",
+    "id": "w2",
+    "data": {
+      "name": "数据分析与报告",
+      "description": "从原始数据到结构清晰的分析报告。",
+      "role": "你是一名数据分析师，请分析提供的数据并生成报告。",
+      "agent": "OpenCode",
+      "extra": false
+    }
+  },
+  {
+    "collection": "resources",
+    "id": "agents-0",
+    "data": {
+      "kind": "agents",
+      "name": "Codex",
+      "description": "从理解代码到完成交付，在任务中与你并肩工作。",
+      "meta": "代码开发 · 任务执行",
+      "installed": false
+    }
+  },
+  {
+    "collection": "resources",
+    "id": "agents-1",
+    "data": {
+      "kind": "agents",
+      "name": "Claude Code",
+      "description": "理解复杂项目，协助重构、调试与技术方案设计。",
+      "meta": "代码理解 · 复杂推理",
+      "installed": false
+    }
+  },
+  {
+    "collection": "resources",
+    "id": "agents-2",
+    "data": {
+      "kind": "agents",
+      "name": "OpenCode",
+      "description": "开放的编码智能体，连接你偏好的模型与工具。",
+      "meta": "多模型 · 灵活扩展",
+      "installed": false
+    }
+  },
+  {
+    "collection": "resources",
+    "id": "skills-0",
+    "data": {
+      "kind": "skills",
+      "name": "代码审查",
+      "description": "分析代码变更，发现潜在问题并提出具体的改进建议。",
+      "meta": "开发与质量",
+      "installed": false
+    }
+  },
+  {
+    "collection": "resources",
+    "id": "skills-1",
+    "data": {
+      "kind": "skills",
+      "name": "项目文档",
+      "description": "理解项目结构，编写清晰的开发指南与技术文档。",
+      "meta": "知识与文档",
+      "installed": false
+    }
+  },
+  {
+    "collection": "resources",
+    "id": "skills-2",
+    "data": {
+      "kind": "skills",
+      "name": "数据分析",
+      "description": "探索数据、检查统计逻辑，并生成有依据的分析报告。",
+      "meta": "分析与洞察",
+      "installed": false
+    }
+  },
+  {
+    "collection": "resources",
+    "id": "plugins-0",
+    "data": {
+      "kind": "plugins",
+      "name": "OpenCode",
+      "description": "Ora Space OpenCode Agent，连接开放的编码生态。",
+      "meta": "Agent",
+      "installed": true
+    }
+  },
+  {
+    "collection": "resources",
+    "id": "plugins-1",
+    "data": {
+      "kind": "plugins",
+      "name": "SkillHub",
+      "description": "发现、管理并复用团队的技能与工作方法。",
+      "meta": "Webview",
+      "installed": true
+    }
+  },
+  {
+    "collection": "resources",
+    "id": "plugins-2",
+    "data": {
+      "kind": "plugins",
+      "name": "Tavily",
+      "description": "为 Agent 提供网页检索与研究能力。",
+      "meta": "MCP",
+      "installed": false
+    }
+  },
+  {
+    "collection": "resources",
+    "id": "plugins-3",
+    "data": {
+      "kind": "plugins",
+      "name": "Claude Code",
+      "description": "将 Claude Code 引入统一任务工作区。",
+      "meta": "Agent",
+      "installed": false
+    }
+  },
+  {
+    "collection": "resources",
+    "id": "plugins-4",
+    "data": {
+      "kind": "plugins",
+      "name": "Codex",
+      "description": "在统一的会话中协作完成开发工作。",
+      "meta": "Agent",
+      "installed": false
+    }
+  },
+  {
+    "collection": "resources",
+    "id": "plugins-5",
+    "data": {
+      "kind": "plugins",
+      "name": "Matt Pocock's Skills",
+      "description": "面向实际工程任务的开发技能集合。",
+      "meta": "Skill",
+      "installed": false
+    }
+  },
+  {
+    "collection": "resources",
+    "id": "teams-0",
+    "data": {
+      "kind": "teams",
+      "name": "产品研发小队",
+      "description": "开发、审查和文档，三个角色协作完成一个目标。",
+      "meta": "Codex · Claude Code · OpenCode",
+      "installed": false
+    }
+  },
+  {
+    "collection": "resources",
+    "id": "teams-1",
+    "data": {
+      "kind": "teams",
+      "name": "数据洞察小队",
+      "description": "从数据探索到结果校验，让分析过程更完整。",
+      "meta": "分析师 · 审查员",
+      "installed": false
+    }
+  },
+  {
+    "collection": "resources",
+    "id": "runtimes-0",
+    "data": {
+      "kind": "runtimes",
+      "name": "本地工作空间",
+      "description": "在你的设备上使用项目文件、终端与本地工具。",
+      "meta": "未连接 · 需要桌面服务",
+      "installed": false
+    }
+  },
+  {
+    "collection": "resources",
+    "id": "runtimes-1",
+    "data": {
+      "kind": "runtimes",
+      "name": "云端沙箱",
+      "description": "隔离的云端执行环境，适合无人值守的工作。",
+      "meta": "未连接 · 需要云端服务",
+      "installed": false
+    }
+  },
+  {
+    "collection": "notifications",
+    "id": "i1",
+    "data": {
+      "title": "代码审查已就绪",
+      "text": "Dashboard 统计计算与边界测试 · 等待你的审查",
+      "taskId": "t2",
+      "read": false
+    }
+  },
+  {
+    "collection": "notifications",
+    "id": "i2",
+    "data": {
+      "title": "开发指南已整理完成",
+      "text": "ora-cloud · 查看任务中的示例交付记录",
+      "taskId": "t4",
+      "read": false
+    }
+  },
+  {
+    "collection": "notifications",
+    "id": "i3",
+    "data": {
+      "title": "工作区已准备就绪",
+      "text": "你的桌面项目与云端任务，现在可以在这里统一管理。",
+      "taskId": "",
+      "read": false
+    }
+  },
+  {
+    "collection": "settings",
+    "id": "workspace",
+    "data": {
+      "name": "Elephant 工作空间",
+      "theme": "light",
+      "agent": "Codex",
+      "env": "local",
+      "projectId": "p1"
+    }
+  }
+]

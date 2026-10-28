@@ -12,7 +12,10 @@ import (
 type API struct{ store *Store }
 
 func (a *API) Register(mux *http.ServeMux) {
-	mux.HandleFunc("GET /api/health", func(w http.ResponseWriter, _ *http.Request) { writeJSON(w, http.StatusOK, map[string]string{"status": "ok"}) })
+	a.registerRecords(mux)
+	mux.HandleFunc("GET /api/health", func(w http.ResponseWriter, _ *http.Request) {
+		writeJSON(w, http.StatusOK, map[string]string{"status": "ok"})
+	})
 	mux.HandleFunc("GET /api/todos", a.list)
 	mux.HandleFunc("POST /api/todos", a.create)
 	mux.HandleFunc("PATCH /api/todos/{id}", a.update)
