@@ -1,0 +1,40 @@
+version: '3'
+
+env:
+  CGO_ENABLED: '0'
+
+tasks:
+  install:
+    desc: 安装前端依赖、下载 Go 模块
+    cmds:
+      - pnpm -C web install
+      - cd server && go mod download
+
+  dev:
+    desc: 同时启动后端（:8080）和前端（:5173）
+    deps: [dev:server, dev:web]
+
+  dev:server:
+    dir: server
+    cmd: go run .
+
+  dev:web:
+    dir: web
+    cmd: pnpm dev
+
+  build:
+    desc: 构建前端和单个后端二进制 bin/demo
+    cmds:
+      - pnpm -C web build
+      - cd server && go build -o ../bin/demo .
+
+  start:
+    desc: 构建后用一个进程同时提供 API 和前端（:8080）
+    deps: [build]
+    cmd: ./bin/demo -db server/data/demo.db -static web/dist
+
+  check:
+    desc: 类型检查、构建、测试
+    cmds:
+      - pnpm -C web build
+      - cd server && go vet ./... && go test ./...

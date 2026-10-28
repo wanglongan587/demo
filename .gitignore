@@ -1,0 +1,27 @@
+# Logs
+logs
+*.log
+
+# Dependencies and build output
+node_modules/
+dist/
+dist-ssr/
+/target/
+*.tsbuildinfo
+/bin/
+
+# Local files
+*.local
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/*
+*.sw?
+/.data/
+.tmp/
+/server/data/
+
+# Independent memory repository
+/memories/
